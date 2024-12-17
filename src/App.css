@@ -1,0 +1,981 @@
+
+/* Reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+/* Body baggrund */
+body {
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Fjern vandret scroll */
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.desktop-forside {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  position: fixed; /* Fastgør headeren til skærmen */
+  top: 0; /* Fastgør headeren til toppen af skærmen */
+  left: 0; /* Starter fra venstre side */
+  width: 100%; /* Sørger for, at headeren fylder hele bredden */
+  z-index: 1000; /* Sørg for, at den vises over alt andet */
+  background-color: white; /* Baggrund for at undgå overlap */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tilføj en let skygge */
+}
+
+.header .top-bar {
+  background-color: #442112;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: "Poppins";
+}
+
+.header .top-bar .email {
+  margin: 0;
+}
+
+.header .top-bar .contact {
+  margin: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Header content */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.header-content .kaffe-logo {
+  height: 50px;
+}
+
+.header-content .search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #442112;
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 400px;
+}
+
+.search-bar .search-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.search-bar .search-icon {
+  height: 20px;
+  cursor: pointer;
+}
+
+.header-content .gratis-fragt {
+  font-size: 14px;
+  font-family: "Poppins";
+  color: #333;
+}
+
+.gratis-fragt .bold {
+  font-weight: bold;
+}
+
+.header-content .cart-icon {
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Main menu */
+.main-menu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  background-color: #ffffff;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: "Poppins";
+  color: #333;
+}
+
+.main-menu .menu-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.main-menu .menu-item .dropdown-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Hover effects */
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+  font-family: "Poppins";
+}
+/* Stil for banner-sektionen */
+.banner {
+  width: 100vw; /* Gør bredden 100% af skærmen */
+  margin-left: calc(-50vw + 50%); /* Centerer og fjerner begrænsning fra en container */
+  position: relative;
+  height: 500px; /* Tilpas efter dit behov */
+  background-image: url("../assets/BANNER.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay, der dækker hele banneret */
+.banner .overlay {
+  position: absolute; /* Absolut positionering inden for banner */
+  top: 0;
+  left: 0;
+  width: 100%; /* Dækker hele bredden */
+  height: 100%; /* Dækker hele højden */
+  background-color: rgba(68, 33, 18, 0.5); /* Halvgennemsigtig brun farve */
+  z-index: 1; /* Sørger for, at overlay er over baggrundsbilledet */
+  display: flex; /* Brug flexbox til centreret indhold */
+  color: #fff; /* Hvid skriftfarve */
+  text-align: center; /* Centreret tekst */
+  border-radius: 0;
+}
+
+/* Tekststil i overlay */
+.banner .overlay h1 {
+  font-size: 48px; /* Overskriftens størrelse */
+  margin: 0 0 10px; /* Margin for h1 */
+  font-family: "Playfair Display", serif;
+}
+
+.banner .overlay p {
+  font-size: 20px; /* Undertekstens størrelse */
+  margin: 0; /* Fjern margin */
+  font-family: "Poppins";
+}
+
+
+/* Indhold i banner */
+.banner-content {
+  position: relative; /* Sørger for, at tekst vises over overlayet */
+  z-index: 2; /* Teksten placeres øverst */
+  color: #ffffff; /* Hvid skriftfarve */
+  text-align: center;
+  top: 50%; /* Placerer indholdet centralt */
+  transform: translateY(-50%);
+}
+
+.banner-content h1 {
+  font-size: 48px;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.banner-content p {
+  font-size: 20px;
+  font-family: "Poppins";
+  margin: 10px 0 0;
+}
+
+/* Kategorisektion */
+.categories {
+  display: flex;
+  justify-content: center; /* Lige plads mellem kortene */
+  align-items: center;
+  margin: 50px 0;
+  padding: 0 20px;
+}
+
+.category {
+  position: relative;
+  background-color: #FFFFFF;
+
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Teksten kommer under billedet */
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Sikrer at billedet passer */
+
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 80%; /* Juster billedets højde */
+  overflow: hidden; /* Sikrer at hjørnerne beskæres */
+  
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Billedet fylder hele boksen */
+  border-radius: 20px 0px 0px 20px; /* Øverste venstre og nederste højre hjørne afrundet */
+  margin: 0px 20px 0px 20px;
+}
+.category-img2 {
+height: 100%;
+
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 22, 22, 0.192); /* Grå overlay med opacity */
+  border-radius: 20px 0px 0px 20px; /* Øverste venstre og nederste højre hjørne afrundet */
+
+}
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(88, 84, 84, 0.192); /* Grå overlay med opacity */
+  border-radius: 20px 0px 0px 20px; /* Øverste venstre og nederste højre hjørne afrundet */
+ margin-left: 20px;
+}
+
+.category-text {
+  margin-top: 15px;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+
+
+
+/* Products */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Afstand mellem produkterne */
+  margin: 50px 0;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background: #f9f9f9; /* Lys baggrund */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Blød skygge */
+  width: 250px;
+  min-height: 400px; /* Ens højde for alle bokse */
+  transition: transform 0.3s ease;
+}
+
+.product img {
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-height: 210px;
+}
+
+.product h3 {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product p {
+  font-family: "Poppins";
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  flex-grow: 1; /* Fylder pladsen mellem overskrift og knap */
+}
+
+.btn {
+  font-family: "Poppins";
+  background-color: #ea5a0b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: auto; /* Skubber knappen til bunden */
+}
+
+.btn:hover {
+  background-color: #c94a0a;
+}
+
+.product:hover {
+  transform: translateY(-5px); /* Løft produkt ved hover */
+}
+/* Footer */
+.footer {
+  width: 100vw; /* Gør footeren 100% bred */
+  margin-left: calc(-50vw + 50%); /* Fjerner container-begrænsning */
+  position: relative;
+  background-color: #442112; /* Hvis footeren har en baggrundsfarve */
+  color: white; /* Justér tekstfarve efter behov */
+  padding: 20px 0; /* Tilføj padding for spacing */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff33;
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-section h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  font-family: "Poppins";
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  font-family: "Poppins";
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #ea5a0b; /* Orange hover */
+}
+
+.footer-section p {
+  font-family: "Poppins";
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 150px; /* Tilpas størrelse til logoet */
+}
+
+.footer-bottom p {
+  font-family: "Poppins";
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #ea5a0b;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+/* Generelle header-styles */
+.header-desktop {
+  display: none;
+}
+/* Styling til det responsive header-logo */
+.header-responsive .logo {
+  max-width: 150px; /* Maksimal bredde for logoet */
+  height: auto; /* Bevar proportionerne */
+  object-fit: contain; /* Sørg for, at logoet ikke strækker sig */
+  display: block;
+  margin: 0 auto; /* Centrer logoet */
+  padding: 0;
+}
+
+.header-responsive {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; 
+}
+
+@media (min-width: 768px) {
+  .header-desktop {
+    display: flex;
+  }
+
+  .header-responsive {
+    display: none;
+  }
+}
+/* Responsiv header vises kun på mindre skærme */
+@media (max-width: 768px) {
+  .show-desktop {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* Burger menu-styles */
+.burger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.responsive-menu {
+  background-color: #442112;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.responsive-menu .menu-item {
+  margin: 10px 0;
+}
+.header-responsive .burger-menu {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.stort-udvalg-af-kaffemaskiner {
+  text-align: center; /* Centrerer teksten horisontalt */
+  margin: 40px 0; /* Giver lidt luft over og under teksten */
+}
+
+.stort-udvalg-af-kaffemaskiner h2 {
+  font-size: 32px; /* Større skrifttype */
+  font-family: "Playfair Display", serif; /* Match skrifttypen fra det tidligere design */
+  font-weight: 400; /* Normal vægt */
+  color: #000000; /* Sort farve */
+}
+a {
+  text-decoration: none; /* Fjerner understregning */
+  color: inherit; /* Bruger samme farve som forældre-elementet */
+  font-weight: normal; /* Sørger for, at teksten ikke er fed */
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none; /* Ingen effekter ved hover, focus eller klik */
+  color: inherit; /* Holder farven konstant */
+}
+.product-description {
+  white-space: pre-line; /* Gør linjeskift synlige */
+  font-family: "Poppins", serif; /* Sørger for at bruge Poppins-skrift */
+  font-size: 16px; /* Standard font størrelse */
+  color: #333; /* Farve på teksten */
+  margin-bottom: 10px; /* Afstand under beskrivelsen */
+}
+/* Title Banner Styling */
+.title-banner {
+  width: 100%; /* Fylder hele bredden */
+  height: 150px; /* Tynd højde */
+  background-size: cover; /* Billedet fylder hele sektionen */
+  background-position: center; /* Centrerer billedet */
+  display: flex; /* Bruger flex for at centrere teksten */
+  justify-content: center; /* Centrerer vandret */
+  align-items: center; /* Centrerer lodret */
+  margin: 0; /* Fjerner standard margin */
+  padding: 0;
+}
+
+.title-banner .title-text {
+  color: #ffffff; /* Hvid tekst */
+  font-family: "Playfair Display", serif;
+  font-size: 42px; /* Størrelse på titlen */
+  font-weight: 600; /* Semi-bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tekstskygge for bedre læsbarhed */
+  margin: 0; /* Fjerner default margin */
+}
+
+.title-banner {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-text {
+  color: #fff;
+  font-size: 36px;
+  font-family: "Poppins", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content Layout */
+.content-kategori {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Filter Box */
+.filter-box {
+  width: 20%; /* Venstre sideboks størrelse */
+  height: 400px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-box h3 {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.filter-box label {
+  display: block;
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter-box input {
+  margin-right: 8px;
+}
+
+/* Product Container */
+.products-container {
+  width: 80%; /* Højre side med produkter */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+
+
+.product-card {
+  width: 280px; /* Ens størrelse på kort */
+  text-align: center;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Container til kortene */
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 50px;
+}
+
+/* Individuelle kort */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  width: 350px;
+
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Fremhæv midterste kort */
+.service-card.highlighted {
+  background-color: #442213;
+  color: #fff;
+}
+
+/* Titel og underoverskrift */
+.service-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.service-subtitle {
+  font-size: 14px;
+  color: inherit;
+  margin-bottom: 10px;
+}
+
+/* Pris og årligt tekst */
+.service-price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.service-annual {
+  font-size: 14px;
+  color: inherit;
+  margin-bottom: 15px;
+}
+
+/* Funktioner (liste) */
+.service-features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.service-features li {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Knap-styling */
+.service-button {
+  background-color: #EA5A0B;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+
+}
+
+.service-button:hover {
+  background-color: #d14d12;
+  transition: background-color 0.3s ease;
+}
+
+.kontakt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px;
+}
+
+.kontakt-card {
+  width: 500px;
+  background: #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.kontakt-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+.kontakt-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.kontakt-card label {
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.kontakt-card input,
+.kontakt-card textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.kontakt-card button {
+  background-color: #ea5a0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.kontakt-card button:hover {
+  background-color: #d14904;
+}
+
+.btnk {
+  display: block;
+  background-color: #ea5a0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none; /* Fjern understregning */
+}
+
+.btnk:hover {
+  background-color: #d14904;
+}
+
+.product-page {
+  display: flex;
+  gap: 50px; /* Afstand mellem venstre og højre sektion */
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Venstre sektion */
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-image img {
+  width: 400px; /* Gør billedet større */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centrer billedet i venstre sektion */
+}
+
+.product-details h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.product-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-details li {
+ 
+  margin-bottom: 5px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #ea5a0b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+
+.btn-primary:hover {
+  background-color: #d14904;
+}
+
+/* Højre sektion */
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.right-section h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.price-boxes {
+  display: flex;
+  gap: 20px;
+}
+
+.price-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+}
+
+.price-box p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.price-box span {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ea5a0b;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options-container label {
+  font-weight: bold;
+}
+
+.options-container select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Styling for product-info sektionen */
+.product-info {
+  background-color: #f9f9f9; /* Let grå baggrund */
+  padding: 20px;
+  border-radius: 8px; /* Runde hjørner */
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+  font-family: "Poppins", sans-serif; /* Ensartet font */
+}
+
+.product-info h2 {
+  font-size: 1.5rem; /* Størrelse for overskrift */
+  color: #333; /* Mørkegrå farve */
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase; /* Store bogstaver */
+}
+
+.product-info ul {
+  list-style: none; /* Fjern standard listepunkter */
+  padding: 0;
+  margin: 0;
+}
+
+.product-info ul li {
+  font-size: 1rem; /* Standard tekststørrelse */
+  color: #555; /* Medium grå farve */
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.product-info ul li::before {
+  content: "•"; /* Brug bullet point som indikator */
+  position: absolute;
+  left: 0;
+  color: #ea5a0b; /* Orange farve for bullet point */
+  font-size: 1.2rem;
+}
+
+.product-info ul ul {
+  margin-top: 10px;
+  margin-left: 20px; /* Indrykning for underlister */
+}
+
+.product-info ul ul li {
+  font-size: 0.95rem; /* Lidt mindre tekst til underpunkter */
+  color: #777; /* Lysere grå farve */
+}
+
+.product-info ul ul li::before {
+  content: "-"; /* Brug bindestreg for underpunkter */
+  color: #999; /* Endnu lysere farve */
+  font-size: 1rem;
+}
