@@ -39,6 +39,7 @@ body {
   font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
+  min-height: 100vh;
 }
 .desktop-forside {
   max-width: 1440px;
@@ -83,6 +84,7 @@ body {
   justify-content: space-between;
   padding: 20px;
   background-color: #ffffff;
+  
 }
 
 .header-content .kaffe-logo {
@@ -372,6 +374,7 @@ height: 100%;
   background-color: #442112; /* Hvis footeren har en baggrundsfarve */
   color: white; /* Justér tekstfarve efter behov */
   padding: 20px 0; /* Tilføj padding for spacing */
+
 }
 
 .footer-container {
@@ -824,6 +827,7 @@ a:hover, a:focus, a:active {
   gap: 50px; /* Afstand mellem venstre og højre sektion */
   padding: 40px;
   font-family: "Poppins", sans-serif;
+
 }
 
 /* Venstre sektion */
@@ -978,4 +982,8 @@ a:hover, a:focus, a:active {
   content: "-"; /* Brug bindestreg for underpunkter */
   color: #999; /* Endnu lysere farve */
   font-size: 1rem;
+}
+.header-placeholder {
+  height: 150px; /* Skaber plads under headeren */
+  background: transparent; /* Gør containeren usynlig */
 }
