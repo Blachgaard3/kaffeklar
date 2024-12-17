@@ -70,7 +70,7 @@ const DesktopService = () => {
         className="title-banner"
         style={{ backgroundImage: `url(${banner3})` }}
       >
-        <h2 className="title-text">Kaffemaskiner</h2>
+        <h2 className="title-text">Serviceaftale</h2>
       </section>
       <main className="content">
       <div className="service-container">
